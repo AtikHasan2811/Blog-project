@@ -1,4 +1,6 @@
 @extends('layouts.backend.app')
+
+
 @section('title','Dashboard')
 
 @push('css')
@@ -8,7 +10,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>DASHBOARD</h2>
+                <h2>DASHBOARDaaa</h2>
             </div>
 
             <!-- Widgets -->
