@@ -47,11 +47,7 @@
                 </li>
 
 
-
-
-
-
-
+{{--..............................................tag..............................--}}
 
                 <li class="{{ Request::is('admin/tag*') ? 'active' : '' }}">
                     <a href="{{ route('admin.tag.index') }}">
@@ -60,11 +56,26 @@
                     </a>
                 </li>
 
+{{--..............................................category..............................--}}
+
+                <li class="{{ Request::is('admin/category*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.category.index') }}">
+                        <i class="material-icons">apps</i>
+                        <span>category</span>
+                    </a>
+                </li>
 
 
+                </li>
 
+  {{--..............................................post..............................--}}
 
-
+                <li class="{{ Request::is('admin/post*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.post.index') }}">
+                        <i class="material-icons">library_books</i>
+                        <span>Posts</span>
+                    </a>
+                </li>
 
 
 

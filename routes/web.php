@@ -24,6 +24,9 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 //    'as'=>'admin'ki kre name('admin.home'); set kre
     Route::get('/dashboard','DashboardController@index')->name('dashboard');
     Route::resource('tag','TagController');
+    Route::resource('category','categoryController');
+    Route::resource('post','PostController');
+
 });
 
 
