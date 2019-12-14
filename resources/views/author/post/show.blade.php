@@ -9,27 +9,17 @@
 @section('content')
     <div class="container-fluid">
         <!-- Vertical Layout | With Floating Label -->
-{{--  ..........................................for back button.............................................      --}}
-        <a href="{{ route('admin.post.index') }}" class="btn btn-danger waves-effect">BACK</a>
-
-{{--        .........................................for approived button......................................--}}
+        <a href="{{ route('author.post.index') }}" class="btn btn-danger waves-effect">BACK</a>
         @if($post->is_approved == false)
-            <button type="button" class="btn btn-success waves-effect pull-right" onclick="approvePost({{ $post->id }})">
-                <i class="material-icons">done</i>
-                <span>Approve</span>
+            <button type="button" class="btn btn-danger waves-effect pull-right" disabled>
+                <span>Pending</span>
             </button>
-            <form method="post" action=" {{ route('admin.post.approve',$post->id)}} " id="approval-form" style="display: none">
-                @csrf
-                @method('PUT')
-            </form>
         @else
-            <button type="button" class="btn btn-success pull-right" disabled>
+            <button type="button" class="btn btn-success waves-effect pull-right" disabled>
                 <i class="material-icons">done</i>
                 <span>Approved</span>
             </button>
         @endif
-
-{{--        ..............................................end approvied button.......................................--}}
         <br>
         <br>
             <div class="row clearfix">
@@ -92,10 +82,7 @@
     <script src="{{ asset('assets/backend/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
     <!-- TinyMCE -->
     <script src="{{ asset('assets/backend/plugins/tinymce/tinymce.js') }}"></script>
-    <script src="https://unpkg.com/sweetalert2@7.19.1/dist/sweetalert2.all.js"></script>
     <script>
-
-
         $(function () {
             //TinyMCE
             tinymce.init({
@@ -115,38 +102,6 @@
             tinymce.suffix = ".min";
             tinyMCE.baseURL = '{{ asset('assets/backend/plugins/tinymce') }}';
         });
-
-
-        function approvePost(id) {
-            swal({
-                title: 'Are you sure?',
-                text: "You went to approve this post ",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, approve it!',
-                cancelButtonText: 'No, cancel!',
-                confirmButtonClass: 'btn btn-success',
-                cancelButtonClass: 'btn btn-danger',
-                buttonsStyling: false,
-                reverseButtons: true
-            }).then((result) => {
-                if (result.value) {
-                    event.preventDefault();
-                    document.getElementById('approval-form').submit();
-                } else if (
-                    // Read more about handling dismissals
-                    result.dismiss === swal.DismissReason.cancel
-                ) {
-                    swal(
-                        'Cancelled',
-                        'The post remain pending :)',
-                        'info'
-                    )
-                }
-            })
-        }
     </script>
 
 @endpush
