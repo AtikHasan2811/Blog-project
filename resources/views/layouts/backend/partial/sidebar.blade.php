@@ -104,6 +104,13 @@
                     </a>
                 </li>
 
+
+                <li class="{{ Request::is('admin/authors') ? 'active' : '' }}">
+                    <a href="{{ route('admin.author.index') }}">
+                        <i class="material-icons">account_circle</i>
+                        <span>Authors</span>
+                    </a>
+                </li>
 {{--.................................................fabfavorite post........................--}}
 
                 <li class="{{ Request::is('admin/favorite') ? 'active' : '' }}">
@@ -113,7 +120,14 @@
                     </a>
                 </li>
 
+{{--..............................comments............................................--}}
 
+                <li class="{{ Request::is('admin/comments') ? 'active' : '' }}">
+                    <a href="{{ route('admin.comment.index') }}">
+                        <i class="material-icons">comment</i>
+                        <span>Comments</span>
+                    </a>
+                </li>
 
 
 
@@ -195,8 +209,22 @@
                 </li>
 
 {{--...............................painding post..........................................................--}}
+                <li class="{{ Request::is('author/favorite') ? 'active' : '' }}">
+                    <a href="{{ route('author.favorite.index') }}">
+                        <i class="material-icons">favorite</i>
+                        <span>Favorite Posts</span>
+                    </a>
+                </li>
 
 
+                {{--..............................comments............................................--}}
+
+                <li class="{{ Request::is('author/comments') ? 'active' : '' }}">
+                    <a href="{{ route('author.comment.index') }}">
+                        <i class="material-icons">comment</i>
+                        <span>Comments</span>
+                    </a>
+                </li>
 
 
 
