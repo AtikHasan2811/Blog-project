@@ -7,6 +7,9 @@ Route::get('/tag/{slug}','PostController@postByTag')->name('tag.posts');
 
 
 Route::get('/','HomeController@index')->name('home');
+Route::get('profile/{username}','AuthorController@profile')->name('author.profile');
+
+
 
 
 Route::get('posts','PostController@index')->name('post.index');
