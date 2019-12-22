@@ -1,9 +1,10 @@
-@extends('layouts.frontend.app')
+@extends('layouts.backend.app')
 
 @section('title','Authors')
 
 @push('css')
     <!-- JQuery DataTable Css -->
+
     <link href="{{ asset('assets/backend/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}" rel="stylesheet">
 @endpush
 

@@ -6,6 +6,12 @@
     <link href="{{ asset('assets/frontend/css/category/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/css/category/responsive.css') }}" rel="stylesheet">
     <style>
+        .slider {
+            height: 400px;
+            width: 100%;
+            background-image: url({{ Storage::disk('public')->url('category/'.$category->image) }});
+            background-size: cover;
+        }
         .favorite_posts{
             color: blue;
         }
